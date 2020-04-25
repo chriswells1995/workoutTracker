@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// This allows us to creat Exercise objects, which will have properties with the following names and variable types
 const ExerciseSchema = new Schema({
     type: {
         type: String,
@@ -23,7 +24,7 @@ const ExerciseSchema = new Schema({
     reps: {
         type: Number,
       },
-      
+
 });
 
 const Exercise = mongoose.model("Exercise", ExerciseSchema);
