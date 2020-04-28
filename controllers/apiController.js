@@ -64,7 +64,7 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
 // Through context I guess the user puts in a timer interval somewhere and this returns only workouts created in that range.
 // I'm honestly not sure where on the website this shows up, so I'm not certain how to test it
 router.get("/api/workouts/range", (req, res) => {
-    Workout.find({"created_on":{"$gte": req.start, "$lt": req.end}})
+    Workout.find({}).limit(7)
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
